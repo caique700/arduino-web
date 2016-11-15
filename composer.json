@@ -10,6 +10,7 @@
         "mobiledetect/mobiledetectlib": "2.*",
         "cakephp/migrations": "@stable",
         "cakephp/plugin-installer": "*"
+        "cakephp/debug_kit": "~3.2"
     },
     "require-dev": {
         "psy/psysh": "@stable",
@@ -46,5 +47,5 @@
     },
     "minimum-stability": "beta",
     "prefer-stable": true
-    
+
 }
