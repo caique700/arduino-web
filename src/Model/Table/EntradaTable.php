@@ -51,7 +51,7 @@ class EntradaTable extends Table
     public function getEntrada($data){
         $result = $this->find()
         ->matching('Estacao')
-        ->matching('Usuario')
+        ->matching('Usuario');
         
         //debug($result);
         if($data["tipo_data"] == "year"){
