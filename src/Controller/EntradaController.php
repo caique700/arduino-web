@@ -26,8 +26,9 @@ class EntradaController extends AppController
     public function index()
     {
         //$entradaDeficiente = $this->paginate($this->EntradaDeficiente);
+        $data = $this->request->query; 
         $this->RequestHandler->renderAs($this, 'json');
-        $entrada = $this->entrada->getEntrada();
+        $entrada = $this->entrada->getEntrada($data);
         $this->set(compact('entrada'));
         $this->set('_serialize', ['entrada']);
     }
