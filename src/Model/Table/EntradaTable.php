@@ -54,7 +54,7 @@ class EntradaTable extends Table
         ->matching('Usuario');
         
         //debug($result);
-        if($data["tipo_data"] == "year"){
+        if(!empty($data) &&$data["tipo_data"] == "year"){
             return $this->getRelatorioYear($result->toArray());
         }else{
             return $result->limit(10)->order(['data_entrada' => 'DESC'])->toArray;
