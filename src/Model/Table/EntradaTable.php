@@ -57,7 +57,7 @@ class EntradaTable extends Table
         if(!empty($data) &&$data["tipo_data"] == "year"){
             return $this->getRelatorioYear($result->toArray());
         }else{
-            return $result->limit(10)->order(['data_entrada' => 'DESC'])->toArray;
+            return $result->limit(10)->order(['data_entrada' => 'DESC'])->toArray();
         }
         
     }
