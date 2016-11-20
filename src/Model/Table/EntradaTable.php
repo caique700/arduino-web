@@ -50,9 +50,6 @@ class EntradaTable extends Table
 
     public function getEntrada($data){
         
-
-
-        
         //debug($result);
         if(!empty($data) && $data["tipo_data"] == "year"){
             $result = $this->find()
