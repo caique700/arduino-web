@@ -51,16 +51,20 @@ class EntradaTable extends Table
     public function getEntrada($data){
         
 
-        $result = $this->find()
-        ->matching('Estacao')
-        ->matching('Usuario');
+
         
         //debug($result);
-        if(!empty($data) &&$data["tipo_data"] == "year"){
+        if(!empty($data) && $data["tipo_data"] == "year"){
+            $result = $this->find()
+            ->matching('Estacao')
+            ->matching('Usuario');
             return $this->getRelatorioYear($result->toArray());
         }else if($data['tipo_data'] == "estacao"){
             return $this->getRelatorioEstacao();
         }else{
+            $result = $this->find()
+            ->matching('Estacao')
+            ->matching('Usuario');
             //debug($this->getRelatorioEstacao());
             return $result->limit(10)->order(['data_entrada' => 'DESC'])->toArray();
         }
