@@ -49,6 +49,8 @@ class EntradaTable extends Table
     }
 
     public function getEntrada($data){
+        
+
         $result = $this->find()
         ->matching('Estacao')
         ->matching('Usuario');
@@ -56,10 +58,23 @@ class EntradaTable extends Table
         //debug($result);
         if(!empty($data) &&$data["tipo_data"] == "year"){
             return $this->getRelatorioYear($result->toArray());
+        }else if($data['tipo_data'] == "estacao"){
+            return $this->getRelatorioEstacao();
         }else{
+            //debug($this->getRelatorioEstacao());
             return $result->limit(10)->order(['data_entrada' => 'DESC'])->toArray();
         }
         
+    }
+
+    public function getRelatorioEstacao(){
+        $result = $this->find()
+        ->distinct("Estacao.nome")
+        ->matching("Estacao")
+        ->matching("Usuario")
+        ->group("Estacao.nome");
+        $result->select(['Estacao.nome', 'count' => $result->func()->count('Estacao.nome')])->toArray();
+        return $result;
     }
 
     public function getRelatorioYear($entradas){
