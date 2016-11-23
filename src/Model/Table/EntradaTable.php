@@ -146,7 +146,7 @@ class EntradaTable extends Table
            //debug($ds->data_entrada->i18nFormat('dd-MM'));
            //debug($dataAtual);
             if($ds->data_entrada->i18nFormat('dd-MM') == $dataAtual ){
-                $dataProcessamento[$ds->_matchingData['Estacao']->nome][] = $ds;
+                array_push($dataProcessamento,$ds);
             } 
         }
         return $dataProcessamento;
