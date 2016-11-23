@@ -65,6 +65,11 @@ class EntradaTable extends Table
             return $this->getRelatorioYear($result->toArray());
         }else if($data['tipo_data'] == "estacao"){
             return $this->getRelatorioEstacao();
+        }else if($data['tipo_data'] == "hora"){
+            $result = $this->find()
+            ->matching('Estacao')
+            ->matching('Usuario')->toArray();
+            return $this->entradaEstacaoHora($result);
         }
     }
 
@@ -128,6 +133,26 @@ class EntradaTable extends Table
         }
         return $mouths;
     }
+
+
+    private function entradaEstacaoHora($data){
+        $dataAtual = date('d-m');
+        $dataProcessamento = array();
+        //debug($data[0]->data_entrada->i18nFormat());
+        /*foreach( $data as $dsEstacao){
+        }*/
+
+        foreach($data as $ds){
+           //debug($ds->data_entrada->i18nFormat('dd-MM'));
+           //debug($dataAtual);
+            if($ds->data_entrada->i18nFormat('dd-MM') == $dataAtual ){
+                $dataProcessamento[$ds->_matchingData['Estacao']->nome][] = $ds;
+            } 
+        }
+        return $dataProcessamento;
+
+    }
+
     /**
      * Initialize method
      *
