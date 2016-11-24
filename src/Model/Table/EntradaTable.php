@@ -141,15 +141,171 @@ class EntradaTable extends Table
         //debug($data[0]->data_entrada->i18nFormat());
         /*foreach( $data as $dsEstacao){
         }*/
-
+        $horas = array( "horas" => array( ));
         foreach($data as $ds){
            //debug($ds->data_entrada->i18nFormat('dd-MM'));
-           //debug($dataAtual);
+           //debug($ds->data_entrada->i18nFormat('HH'));
             if($ds->data_entrada->i18nFormat('dd-MM') == $dataAtual ){
-                $dataProcessamento[$ds->_matchingData['Estacao']->nome][] = $ds;
+                switch ($ds->data_entrada->i18nFormat('HH')) {
+                      case '00':
+
+                            $quantidade = $horas['horas']['00'][$ds->_matchingData['Estacao']->nome] + 1;
+                            $horas['horas']['00'][$ds->_matchingData['Estacao']->nome] = $quantidade; 
+                                            
+                          break;
+                      case '01':
+                            $quantidade = $horas['horas']['01'][$ds->_matchingData['Estacao']->nome] + 1;
+                            $horas['horas']['01'][$ds->_matchingData['Estacao']->nome] = $quantidade; 
+                              case '02':
+                            $quantidade = $horas['horas']['02'][$ds->_matchingData['Estacao']->nome] + 1;
+                            $horas['horas']['02'][$ds->_matchingData['Estacao']->nome] = $quantidade; 
+                              case '03':
+                            $quantidade = $horas['horas']['03'][$ds->_matchingData['Estacao']->nome] + 1;
+                            $horas['horas']['03'][$ds->_matchingData['Estacao']->nome] = $quantidade; 
+                        
+                          break;                      
+                      case '04':
+                            $quantidade = $horas['horas']['04'][$ds->_matchingData['Estacao']->nome] + 1;
+                            $horas['horas']['04'][$ds->_matchingData['Estacao']->nome] = $quantidade; 
+                        
+                          break;                      
+                      case '05':
+                            $quantidade = $horas['horas']['05'][$ds->_matchingData['Estacao']->nome] + 1;
+                            $horas['horas']['05'][$ds->_matchingData['Estacao']->nome] = $quantidade; 
+                        
+                          break;                      
+                      case '06':
+                            $quantidade = $horas['horas']['06'][$ds->_matchingData['Estacao']->nome] + 1;
+                            $horas['horas']['06'][$ds->_matchingData['Estacao']->nome] = $quantidade; 
+                        
+                          break;                      
+                      case '07':
+                            $quantidade = $horas['horas']['07'][$ds->_matchingData['Estacao']->nome] + 1;
+                            $horas['horas']['07'][$ds->_matchingData['Estacao']->nome] = $quantidade; 
+                        
+                          break;                      
+                      case '08':
+                            $quantidade = $horas['horas']['08'][$ds->_matchingData['Estacao']->nome] + 1;
+                            $horas['horas']['08'][$ds->_matchingData['Estacao']->nome] = $quantidade; 
+                        
+                          break;                      
+                      case '09':
+                            $quantidade = $horas['horas']['09'][$ds->_matchingData['Estacao']->nome] + 1;
+                            $horas['horas']['09'][$ds->_matchingData['Estacao']->nome] = $quantidade; 
+                        
+                          break;                      
+                      case '10':
+                            $quantidade = $horas['horas']['10'][$ds->_matchingData['Estacao']->nome] + 1;
+                            $horas['horas']['10'][$ds->_matchingData['Estacao']->nome] = $quantidade;
+
+                            //debug($horas['horas']['hora']);
+
+
+
+                       /* array_push($horas['estacao'], $ds->_matchingData['Estacao']->nome);
+                                                if( $horas['estacao'] == $ds->_matchingData['Estacao']->nome  ){
+                            $horas['estacao']['quantidade'] = $horas['estacao']['quantidade'] + 1;
+                        }*/
+                        //array_push($horas["horas"]["hora"]['10'],$obj);
+                          break;                      
+                      case '11':
+                            $quantidade = $horas['horas']['11'][$ds->_matchingData['Estacao']->nome] + 1;
+                            $horas['horas']['11'][$ds->_matchingData['Estacao']->nome] = $quantidade; 
+                        
+                          break;                      
+                      case '12':
+                            $quantidade = $horas['horas']['12'][$ds->_matchingData['Estacao']->nome] + 1;
+                            $horas['horas']['12'][$ds->_matchingData['Estacao']->nome] = $quantidade; 
+                        
+                          break;                      
+                      case '13':
+                            $quantidade = $horas['horas']['13'][$ds->_matchingData['Estacao']->nome] + 1;
+                            $horas['horas']['13'][$ds->_matchingData['Estacao']->nome] = $quantidade; 
+                        
+                          break;                      
+                      case '14':
+                            $quantidade = $horas['horas']['14'][$ds->_matchingData['Estacao']->nome] + 1;
+                            $horas['horas']['14'][$ds->_matchingData['Estacao']->nome] = $quantidade; 
+                        
+                          break;                      
+                      case '15':
+                            $quantidade = $horas['horas']['15'][$ds->_matchingData['Estacao']->nome] + 1;
+                            $horas['horas']['15'][$ds->_matchingData['Estacao']->nome] = $quantidade; 
+                        
+                          break;                      
+                      case '16':
+                            $quantidade = $horas['horas']['16'][$ds->_matchingData['Estacao']->nome] + 1;
+                            $horas['horas']['16'][$ds->_matchingData['Estacao']->nome] = $quantidade; 
+                        
+                          break;                      
+                      case '17':
+                            $quantidade = $horas['horas']['17'][$ds->_matchingData['Estacao']->nome] + 1;
+                            $horas['horas']['17'][$ds->_matchingData['Estacao']->nome] = $quantidade; 
+                        
+                          break;                      
+                      case '18':
+                            $quantidade = $horas['horas']['18'][$ds->_matchingData['Estacao']->nome] + 1;
+                            $horas['horas']['18'][$ds->_matchingData['Estacao']->nome] = $quantidade; 
+                        
+                          break;                      
+                      case '19':
+                            $quantidade = $horas['horas']['19'][$ds->_matchingData['Estacao']->nome] + 1;
+                            $horas['horas']['19'][$ds->_matchingData['Estacao']->nome] = $quantidade; 
+                        
+                          break;                      
+                      case '20':
+                            $quantidade = $horas['horas']['20'][$ds->_matchingData['Estacao']->nome] + 1;
+                            $horas['horas']['20'][$ds->_matchingData['Estacao']->nome] = $quantidade; 
+                        
+                          break;                      
+                      case '21':
+                            $quantidade = $horas['horas']['21'][$ds->_matchingData['Estacao']->nome] + 1;
+                            $horas['horas']['21'][$ds->_matchingData['Estacao']->nome] = $quantidade; 
+                        
+                          break;                      
+                      case '22':
+                            $quantidade = $horas['horas']['22'][$ds->_matchingData['Estacao']->nome] + 1;
+                            $horas['horas']['22'][$ds->_matchingData['Estacao']->nome] = $quantidade; 
+                        
+                          break;                      
+                      case '23':
+                            $quantidade = $horas['horas']['23'][$ds->_matchingData['Estacao']->nome] + 1;
+                            $horas['horas']['23'][$ds->_matchingData['Estacao']->nome] = $quantidade; 
+                        
+                          break;                      
+
+                      default:
+                          # code...
+                          break;
+                  }  
+                
             } 
         }
-        return $dataProcessamento;
+        //debug($horas['horas']);
+        //$estacaoHorario;
+        /*foreach ($horas['horas'] as $hs) {
+            //$hs['horas']->estacao;
+            //debug($hs);
+
+            /*foreach ($hs as $ob) {
+                debug($ob);
+
+                /*$estacaoHorario['horario'][] = $ob->horario;
+                if( !in_array($ob->estacao, $estacaoHorario['horario']['estacao'] )  ){
+                    $estacaoHorario['horario']['estacao'] = $ob->estacao;
+                }
+                debug($estacaoHorario);*/
+
+
+          /*  }*/
+            /*$obj = new \StdClass;
+            $obj->horas = $hs[0];
+            debug($hs);
+            $obj->quantidade = $hs['quantidade'] + $;
+            array_push($dataProcessamento, $obj);
+            */
+        /*}*/
+        return $horas;
 
     }
 
