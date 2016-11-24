@@ -137,14 +137,13 @@ class EntradaTable extends Table
 
     private function entradaEstacaoHora($data){
         $dataAtual = date('d-m');
-        debug($dataAtual);
         $dataProcessamento = array();
         //debug($data[0]->data_entrada->i18nFormat());
         /*foreach( $data as $dsEstacao){
         }*/
         $horas = array( "horas" => array( ));
         foreach($data as $ds){
-           debug($ds->data_entrada->i18nFormat('dd-MM'));
+           //debug($ds->data_entrada->i18nFormat('dd-MM'));
            //debug($ds->data_entrada->i18nFormat('HH'));
             if($ds->data_entrada->i18nFormat('dd-MM') == $dataAtual ){
                 switch ($ds->data_entrada->i18nFormat('HH')) {
