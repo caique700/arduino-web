@@ -198,15 +198,6 @@ class EntradaTable extends Table
                             $quantidade = $horas['horas']['10'][$ds->_matchingData['Estacao']->nome] + 1;
                             $horas['horas']['10'][$ds->_matchingData['Estacao']->nome] = $quantidade;
 
-                            //debug($horas['horas']['hora']);
-
-
-
-                       /* array_push($horas['estacao'], $ds->_matchingData['Estacao']->nome);
-                                                if( $horas['estacao'] == $ds->_matchingData['Estacao']->nome  ){
-                            $horas['estacao']['quantidade'] = $horas['estacao']['quantidade'] + 1;
-                        }*/
-                        //array_push($horas["horas"]["hora"]['10'],$obj);
                           break;                      
                       case '11':
                             $quantidade = $horas['horas']['11'][$ds->_matchingData['Estacao']->nome] + 1;
@@ -356,10 +347,6 @@ class EntradaTable extends Table
         $validator
             ->integer('estacao_id_estacao')
             ->allowEmpty('estacao_id_estacao');
-
-        $validator
-            ->integer('usuario_id_usuario')
-            ->allowEmpty('usuario_id_usuario');
 
         return $validator;
     }
